@@ -15,7 +15,7 @@ class CounterRepositoryImpl : CounterRepository {
     override suspend fun decrement(currentCount: Int): Int {
         delay(300)
         if (currentCount <= 0) {
-            throw IllegalStateException("Счетчик не может быть меньше 0!")
+            throw IllegalStateException("The counter must not be less than 0!")
         }
         return currentCount - 1
     }
@@ -26,10 +26,10 @@ class CounterRepositoryImpl : CounterRepository {
     }
 
     override fun observeCount(): Flow<Int> = flow {
-        // Здесь могла бы быть реальная подписка на изменения в БД
+        // There could be a real subscription for changes to the database here
         while (true) {
             delay(1000)
-            // Эмуляция внешних изменений
+            // Emulation of external changes
         }
     }
 }

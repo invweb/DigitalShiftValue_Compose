@@ -15,15 +15,15 @@ class CounterViewModel(
     private val repository: CounterRepository = CounterRepositoryImpl()
 ) : ViewModel() {
 
-    // Состояние UI
+    // UI Status
     private val _state = MutableStateFlow(CounterState())
     val state: StateFlow<CounterState> = _state.asStateFlow()
 
-    // Канал для эффектов (одноразовые события)
+    // Channel for effects (one-time events)
     private val _effect = Channel<CounterEffect>()
     val effect: Flow<CounterEffect> = _effect.receiveAsFlow()
 
-    // Обработка интентов (действий пользователя)
+    // Processing of intents (user actions)
     fun handleIntent(intent: CounterIntent) {
         when (intent) {
             is CounterIntent.Increment -> increment()
