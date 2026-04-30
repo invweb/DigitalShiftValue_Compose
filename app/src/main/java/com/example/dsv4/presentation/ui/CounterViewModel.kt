@@ -45,20 +45,20 @@ class CounterViewModel(
                     _state.value.copy(
                         count = newCount,
                         isLoading = false,
-                        lastOperation = "Увеличение до $newCount"
+                        lastOperation = "Increase to $newCount"
                     )
                 }
 
-                sendEffect(CounterEffect.ShowToast("+1 к счетчику!"))
+                sendEffect(CounterEffect.ShowToast("+1 to the counter!"))
 
             } catch (e: Exception) {
                 updateState {
                     _state.value.copy(
                         isLoading = false,
-                        error = e.message ?: "Ошибка при увеличении"
+                        error = e.message ?: "Error when zooming in"
                     )
                 }
-                sendEffect(CounterEffect.ShowToast("Ошибка: ${e.message}"))
+                sendEffect(CounterEffect.ShowToast("error: ${e.message}"))
             }
         }
     }
@@ -74,7 +74,7 @@ class CounterViewModel(
                     _state.value.copy(
                         count = newCount,
                         isLoading = false,
-                        lastOperation = "Уменьшение до $newCount"
+                        lastOperation = "Reduction to $newCount"
                     )
                 }
 
@@ -86,10 +86,10 @@ class CounterViewModel(
                 updateState {
                     _state.value.copy(
                         isLoading = false,
-                        error = e.message ?: "Ошибка при уменьшении"
+                        error = e.message ?: "Error when zooming out"
                     )
                 }
-                sendEffect(CounterEffect.ShowToast("Ошибка: ${e.message}"))
+                sendEffect(CounterEffect.ShowToast("Error: ${e.message}"))
             }
         }
     }
@@ -105,17 +105,17 @@ class CounterViewModel(
                     _state.value.copy(
                         count = newCount,
                         isLoading = false,
-                        lastOperation = "Сброс"
+                        lastOperation = "Reset"
                     )
                 }
 
-                sendEffect(CounterEffect.ShowToast("Счетчик сброшен"))
+                sendEffect(CounterEffect.ShowToast("The counter has been reset"))
 
             } catch (e: Exception) {
                 updateState {
                     _state.value.copy(
                         isLoading = false,
-                        error = e.message ?: "Ошибка при сбросе"
+                        error = e.message ?: "Reset error"
                     )
                 }
             }
@@ -126,7 +126,7 @@ class CounterViewModel(
         updateState {
             _state.value.copy(
                 count = value,
-                lastOperation = "Установка значения $value"
+                lastOperation = "Setting the value $value"
             )
         }
     }
