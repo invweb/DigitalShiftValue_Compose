@@ -1,1 +1,1 @@
-Another test project aimed at MVI.
+Another test project aimed at MVI and Kotlin Compose.
