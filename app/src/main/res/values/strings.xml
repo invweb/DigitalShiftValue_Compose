@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">DSV4</string>
+    <string name="app_name">MVI Счетчик DSV4</string>
+    <string name="Reset">Reset</string>
+    <string name="minus">-1</string>
+    <string name="plus">+1</string>
+    <string name="SetHundred">Set 100</string>
+    <string name="last_action">Last action</string>
+    <string name="Ok">OK</string>
 </resources>

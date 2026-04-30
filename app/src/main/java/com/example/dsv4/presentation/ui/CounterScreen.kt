@@ -11,6 +11,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.dsv4.presentation.effect.CounterEffect
 import com.example.dsv4.presentation.intent.CounterIntent
+import androidx.compose.ui.res.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -18,7 +19,7 @@ fun CounterScreen(viewModel: CounterViewModel) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
-    // Обработка эффектов
+    // Effects processing
     LaunchedEffect(Unit) {
         viewModel.effect.collect { effect ->
             when (effect) {
@@ -30,11 +31,10 @@ fun CounterScreen(viewModel: CounterViewModel) {
                     ).show()
                 }
                 is CounterEffect.PlaySound -> {
-                    // Здесь можно проиграть звук
-                    println("Play sound with id: ${effect.soundId}")
+                    // not implemented
                 }
                 is CounterEffect.NavigateBack -> {
-                    // Навигация назад
+                    // back navigation
                 }
             }
         }
@@ -43,7 +43,7 @@ fun CounterScreen(viewModel: CounterViewModel) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("MVI Счетчик") },
+                title = { Text(stringResource(com.example.dsv4.R.string.app_name)) },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer
                 )
@@ -57,12 +57,11 @@ fun CounterScreen(viewModel: CounterViewModel) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            // Загрузчик
             if (state.isLoading) {
                 CircularProgressIndicator(modifier = Modifier.padding(16.dp))
             }
 
-            // Ошибка
+            // error
             state.error?.let { error ->
                 Card(
                     modifier = Modifier.padding(16.dp),
@@ -82,20 +81,20 @@ fun CounterScreen(viewModel: CounterViewModel) {
                         TextButton(
                             onClick = { viewModel.handleIntent(CounterIntent.ClearError) }
                         ) {
-                            Text("OK")
+                            Text(stringResource(com.example.dsv4.R.string.Ok))
                         }
                     }
                 }
             }
 
-            // Значение счетчика
+            // Counter Value
             Text(
                 text = state.count.toString(),
                 fontSize = 80.sp,
                 modifier = Modifier.padding(32.dp)
             )
 
-            // Кнопки управления
+            // Control buttons
             Row(
                 horizontalArrangement = Arrangement.spacedBy(16.dp),
                 modifier = Modifier.padding(16.dp)
@@ -104,37 +103,36 @@ fun CounterScreen(viewModel: CounterViewModel) {
                     onClick = { viewModel.handleIntent(CounterIntent.Decrement) },
                     enabled = !state.isLoading && state.count > 0
                 ) {
-                    Text("-1")
+                    Text(stringResource(com.example.dsv4.R.string.minus))
                 }
 
                 Button(
                     onClick = { viewModel.handleIntent(CounterIntent.Reset) },
                     enabled = !state.isLoading
                 ) {
-                    Text("Сброс")
+                    Text(stringResource(com.example.dsv4.R.string.Reset))
                 }
 
                 Button(
                     onClick = { viewModel.handleIntent(CounterIntent.Increment) },
                     enabled = !state.isLoading
                 ) {
-                    Text("+1")
+                    Text(stringResource(com.example.dsv4.R.string.plus))
                 }
             }
 
-            // Дополнительный функционал
             OutlinedButton(
                 onClick = { viewModel.handleIntent(CounterIntent.SetCount(100)) },
                 enabled = !state.isLoading,
                 modifier = Modifier.padding(8.dp)
             ) {
-                Text("Установить 100")
+                Text(stringResource(com.example.dsv4.R.string.SetHundred))
             }
 
-            // Информация о последней операции
+            // last action info
             state.lastOperation?.let { operation ->
                 Text(
-                    text = "Последнее действие: $operation",
+                    text = stringResource(com.example.dsv4.R.string.last_action) + " " + operation,
                     fontSize = 12.sp,
                     modifier = Modifier.padding(16.dp),
                     color = MaterialTheme.colorScheme.onSurfaceVariant
