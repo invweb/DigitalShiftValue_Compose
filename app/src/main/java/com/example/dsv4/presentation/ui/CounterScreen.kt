@@ -122,7 +122,7 @@ fun CounterScreen(viewModel: CounterViewModel) {
             }
 
             OutlinedButton(
-                onClick = { viewModel.handleIntent(CounterIntent.SetCount(100)) },
+                onClick = { viewModel.handleIntent(CounterIntent.SetCount(101)) },
                 enabled = !state.isLoading,
                 modifier = Modifier.padding(8.dp)
             ) {
