@@ -1,6 +1,6 @@
 [versions]
 activityComposeVersion = "1.8.0"
-agp = "9.2.0"
+agp = "9.2.1"
 coreKtx = "1.18.0"
 coreKtxVersion = "1.12.0"
 junit = "4.13.2"
