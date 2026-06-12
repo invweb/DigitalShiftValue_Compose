@@ -6,4 +6,9 @@
     <string name="SetHundred">Set 101</string>
     <string name="last_action">Last action</string>
     <string name="Ok">OK</string>
+    <string name="menu_counter">Counter</string>
+    <string name="menu_about">About</string>
+    <string name="about_title">About App</string>
+    <string name="about_description">MVI Counter is a demo application built with Jetpack Compose, demonstrating the Model-View-Intent architectural pattern.</string>
+    <string name="about_version">Version</string>
 </resources>

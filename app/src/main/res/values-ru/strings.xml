@@ -6,4 +6,9 @@
     <string name="SetHundred">Установить 101</string>
     <string name="last_action">Последнее действие</string>
     <string name="Ok">ОК</string>
+    <string name="menu_counter">Счётчик</string>
+    <string name="menu_about">О приложении</string>
+    <string name="about_title">О приложении</string>
+    <string name="about_description">MVI Счётчик — демонстрационное приложение, созданное с использованием Jetpack Compose, демонстрирующее архитектурный паттерн Model-View-Intent.</string>
+    <string name="about_version">Версия</string>
 </resources>
