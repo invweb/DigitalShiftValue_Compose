@@ -6,4 +6,9 @@
     <string name="SetHundred">Auf 101 setzen</string>
     <string name="last_action">Letzte Aktion</string>
     <string name="Ok">OK</string>
+    <string name="menu_counter">Zähler</string>
+    <string name="menu_about">Über die App</string>
+    <string name="about_title">Über die App</string>
+    <string name="about_description">MVI Zähler ist eine Demo-Anwendung, die mit Jetpack Compose erstellt wurde und das Model-View-Intent-Architekturmuster demonstriert.</string>
+    <string name="about_version">Version</string>
 </resources>

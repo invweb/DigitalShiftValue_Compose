@@ -6,4 +6,9 @@
     <string name="SetHundred">Imposta 101</string>
     <string name="last_action">Ultima azione</string>
     <string name="Ok">OK</string>
+    <string name="menu_counter">Contatore</string>
+    <string name="menu_about">Informazioni</string>
+    <string name="about_title">Informazioni</string>
+    <string name="about_description">MVI Contatore è un\'applicazione demo creata con Jetpack Compose, che dimostra il pattern architetturale Model-View-Intent.</string>
+    <string name="about_version">Versione</string>
 </resources>

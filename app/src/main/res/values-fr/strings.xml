@@ -6,4 +6,9 @@
     <string name="SetHundred">Définir 101</string>
     <string name="last_action">Dernière action</string>
     <string name="Ok">OK</string>
+    <string name="menu_counter">Compteur</string>
+    <string name="menu_about">À propos</string>
+    <string name="about_title">À propos</string>
+    <string name="about_description">MVI Compteur est une application de démonstration construite avec Jetpack Compose, illustrant le modèle architectural Model-View-Intent.</string>
+    <string name="about_version">Version</string>
 </resources>
