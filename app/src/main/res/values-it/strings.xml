@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MVI Contatore DSV4</string>
+    <string name="Reset">Reimposta</string>
+    <string name="minus">-1</string>
+    <string name="plus">+1</string>
+    <string name="SetHundred">Imposta 101</string>
+    <string name="last_action">Ultima azione</string>
+    <string name="Ok">OK</string>
+</resources>
