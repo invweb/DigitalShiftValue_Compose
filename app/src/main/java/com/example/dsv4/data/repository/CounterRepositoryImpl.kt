@@ -3,8 +3,9 @@ package com.example.dsv4.data.repository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class CounterRepositoryImpl : CounterRepository {
+class CounterRepositoryImpl @Inject constructor() : CounterRepository {
 
     override suspend fun increment(currentCount: Int): Int {
         // Имитация задержки сети/базы данных

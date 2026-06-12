@@ -13,7 +13,9 @@ import androidx.navigation.compose.rememberNavController
 import com.example.dsv4.ui.theme.DSV4Theme
 import com.example.dsv4.presentation.ui.CounterScreen
 import com.example.dsv4.presentation.ui.CounterViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

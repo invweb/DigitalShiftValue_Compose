@@ -1,15 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.ksp)
 }
 
 android {
     namespace = "com.example.dsv4"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.dsv4"
@@ -37,6 +35,17 @@ android {
     buildFeatures {
         compose = true
     }
+
+    sourceSets {
+        named("debug") {
+            kotlin.srcDir("build/generated/ksp/debug/kotlin")
+            java.srcDir("build/generated/ksp/debug/java")
+        }
+        named("release") {
+            kotlin.srcDir("build/generated/ksp/release/kotlin")
+            java.srcDir("build/generated/ksp/release/java")
+        }
+    }
 }
 
 dependencies {
@@ -50,6 +59,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)

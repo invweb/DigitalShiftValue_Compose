@@ -3,16 +3,18 @@ package com.example.dsv4.presentation.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.dsv4.data.repository.CounterRepository
-import com.example.dsv4.data.repository.CounterRepositoryImpl
 import com.example.dsv4.domain.models.CounterState
 import com.example.dsv4.presentation.effect.CounterEffect
 import com.example.dsv4.presentation.intent.CounterIntent
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CounterViewModel(
-    private val repository: CounterRepository = CounterRepositoryImpl()
+@HiltViewModel
+class CounterViewModel @Inject constructor(
+    private val repository: CounterRepository
 ) : ViewModel() {
 
     // UI Status
